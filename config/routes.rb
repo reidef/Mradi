@@ -1,4 +1,10 @@
 Mradi::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   resources :projects
 
   # The priority is based upon order of creation:
