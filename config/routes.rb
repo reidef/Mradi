@@ -1,7 +1,5 @@
 Mradi::Application.routes.draw do
-  get "sessions/new"
-
-  get "sessions/create"
+  match "sessions/create/:auth_token" => 'sessions#create'
 
   get "sessions/destroy"
 
