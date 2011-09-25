@@ -13,8 +13,9 @@ class ApplicationController < ActionController::Base
   
   def login_required
     unless logged_in?
-      client_token = "Mradi"
-      callback_url = "http://localhost:3000/remote_sessions/create/#{client_token}"
+      client_token = "muradi"
+      # callback_url = "http://localhost:3000/remote_sessions/create/#{client_token}"
+      callback_url = "http://tumaini.dev/remote_sessions/create/#{client_token}"
       redirect_to callback_url
     end
   end

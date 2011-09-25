@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+  def new
+    
+  end
+  
   def create
     if User.authorized_token? params[:auth_token]
       cookies[:auth_token] = params[:auth_token]
@@ -10,7 +14,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    
+    cookies.delete(:auth_token)
+    redirect_to root_url, :notice => "Logged out!"
   end
 
 end
